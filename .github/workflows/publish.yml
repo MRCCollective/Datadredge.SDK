@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-
     steps:
     - uses: actions/checkout@v4
 
@@ -19,6 +18,27 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '9.0.x'
+
+    - name: Bump version
+      id: bump
+      run: |
+        VERSION=$(grep -oP '<Version>\K[^<]+' Datadredge.SDK.csproj)
+        echo "Current version: $VERSION"
+        MAJOR=$(echo $VERSION | cut -d. -f1)
+        MINOR=$(echo $VERSION | cut -d. -f2)
+        PATCH=$(echo $VERSION | cut -d. -f3)
+        PATCH=$((PATCH + 1))
+        NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+        echo "New version: $NEW_VERSION"
+        sed -i "s/<Version>$VERSION<\/Version>/<Version>$NEW_VERSION<\/Version>/" Datadredge.SDK.csproj
+        echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+
+    - name: Commit version bump
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add Datadredge.SDK.csproj
+        git commit -m "Bump version to ${{ steps.bump.outputs.version }}"
 
     - name: Build
       run: dotnet build Datadredge.SDK.csproj -c Release
@@ -28,3 +48,6 @@ jobs:
 
     - name: Publish to NuGet.org
       run: dotnet nuget push ./artifacts/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+
+    - name: Push version bump
+      run: git push
