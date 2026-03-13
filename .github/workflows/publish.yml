@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
 
     steps:
     - uses: actions/checkout@v4
@@ -27,5 +26,5 @@ jobs:
     - name: Pack
       run: dotnet pack Datadredge.SDK.csproj -c Release -o ./artifacts --no-build
 
-    - name: Publish to GitHub Packages
-      run: dotnet nuget push ./artifacts/*.nupkg --source https://nuget.pkg.github.com/MRCCollective/ --api-key ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish to NuGet.org
+      run: dotnet nuget push ./artifacts/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
