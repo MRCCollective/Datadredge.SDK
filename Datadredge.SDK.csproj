@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
 
     <PackageId>Datadredge.SDK</PackageId>
-    <Version>0.1.3</Version>
+    <Version>0.1.4</Version>
     <PackageIcon>icon.png</PackageIcon>
     <Authors>Datadredge</Authors>
     <Description>Server-side pageview tracking SDK for Datadredge analytics</Description>
