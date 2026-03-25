@@ -1,4 +1,4 @@
-namespace Datadredge.SDK;
+namespace Webbstatistik.SDK;
 
 public interface IServerPageviewTrackingClient
 {
@@ -23,7 +23,7 @@ internal sealed class ServerPageviewTrackingClient : IServerPageviewTrackingClie
 
     public Task SendAsync(ServerPageviewTrackingEvent trackingEvent, CancellationToken cancellationToken = default)
     {
-        if (string.IsNullOrWhiteSpace(_options.DatadredgeBaseUrl) ||
+        if (string.IsNullOrWhiteSpace(_options.WebbstatistikBaseUrl) ||
             string.IsNullOrWhiteSpace(_options.SiteKey) ||
             string.IsNullOrWhiteSpace(_options.WebsiteId))
         {

@@ -1,7 +1,7 @@
 using System.Threading.Channels;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Datadredge.SDK;
+namespace Webbstatistik.SDK;
 
 internal sealed class ServerPageviewTrackingQueue
 {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Extensions.Options;
 
-namespace Datadredge.SDK;
+namespace Webbstatistik.SDK;
 
 public sealed class ServerPageviewTrackingMiddleware
 {
@@ -52,7 +52,7 @@ public sealed class ServerPageviewTrackingMiddleware
             return false;
         }
 
-        if (string.IsNullOrWhiteSpace(options.DatadredgeBaseUrl) ||
+        if (string.IsNullOrWhiteSpace(options.WebbstatistikBaseUrl) ||
             string.IsNullOrWhiteSpace(options.SiteKey) ||
             string.IsNullOrWhiteSpace(options.WebsiteId))
         {

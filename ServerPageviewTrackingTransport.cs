@@ -1,6 +1,6 @@
 using System.Net.Http.Json;
 
-namespace Datadredge.SDK;
+namespace Webbstatistik.SDK;
 
 internal interface IServerPageviewTrackingTransport
 {
@@ -9,8 +9,8 @@ internal interface IServerPageviewTrackingTransport
 
 internal sealed class ServerPageviewTrackingTransport : IServerPageviewTrackingTransport
 {
-    internal const string HttpClientName = "Datadredge.ServerPageviewTracking";
-    private const string SiteKeyHeaderName = "x-datadredge-site-key";
+    internal const string HttpClientName = "Webbstatistik.ServerPageviewTracking";
+    private const string SiteKeyHeaderName = "x-webbstatistik-site-key";
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly ServerPageviewTrackingOptions _options;
 
@@ -25,7 +25,7 @@ internal sealed class ServerPageviewTrackingTransport : IServerPageviewTrackingT
     public async Task SendBatchAsync(IReadOnlyList<ServerPageviewTrackingEvent> trackingEvents, CancellationToken cancellationToken)
     {
         if (trackingEvents.Count == 0 ||
-            string.IsNullOrWhiteSpace(_options.DatadredgeBaseUrl) ||
+            string.IsNullOrWhiteSpace(_options.WebbstatistikBaseUrl) ||
             string.IsNullOrWhiteSpace(_options.SiteKey) ||
             string.IsNullOrWhiteSpace(_options.WebsiteId))
         {

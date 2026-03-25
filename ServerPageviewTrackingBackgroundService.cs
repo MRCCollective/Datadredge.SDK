@@ -1,4 +1,4 @@
-namespace Datadredge.SDK;
+namespace Webbstatistik.SDK;
 
 internal sealed class ServerPageviewTrackingBackgroundService : BackgroundService
 {

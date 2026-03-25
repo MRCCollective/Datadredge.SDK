@@ -1,11 +1,11 @@
-# Datadredge.SDK
+# Webbstatistik.SDK
 
-Server-side pageview tracking SDK for [Datadredge analytics](https://datadredge.se).
+Server-side pageview tracking SDK for [Webbstatistik analytics](https://webbstatistik.se).
 
 ## Installation
 
 ```bash
-dotnet add package Datadredge.SDK
+dotnet add package Webbstatistik.SDK
 ```
 
 ## Configuration
@@ -24,7 +24,7 @@ Add to your `appsettings.json`:
 ```json
 {
   "Tracking:ServerPageviews": {
-    "DatadredgeBaseUrl": "https://datadredge.se",
+    "WebbstatistikBaseUrl": "https://webbstatistik.se",
     "SiteKey": "your-site-key",
     "WebsiteId": "your-website-id"
   }
@@ -33,4 +33,4 @@ Add to your `appsettings.json`:
 
 ## Usage
 
-The SDK automatically tracks pageviews for HTML responses. Events are queued and batched to the Datadredge analytics backend.
+The SDK automatically tracks pageviews for HTML responses. Events are queued and batched to the Webbstatistik analytics backend.

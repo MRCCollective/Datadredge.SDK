@@ -6,14 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <PackageId>Datadredge.SDK</PackageId>
+    <PackageId>Webbstatistik.SDK</PackageId>
     <Version>0.1.6</Version>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Authors>Datadredge</Authors>
-    <Description>Server-side pageview tracking SDK for Datadredge analytics</Description>
-    <RepositoryUrl>https://github.com/MRCCollective/Datadredge.SDK</RepositoryUrl>
-    <PackageProjectUrl>https://datadredge.se</PackageProjectUrl>
+    <Authors>Webbstatistik</Authors>
+    <Description>Server-side pageview tracking SDK for Webbstatistik analytics</Description>
+    <RepositoryUrl>https://github.com/MRCCollective/Webbstatistik.SDK</RepositoryUrl>
+    <PackageProjectUrl>https://webbstatistik.se</PackageProjectUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IsPackable>true</IsPackable>
   </PropertyGroup>

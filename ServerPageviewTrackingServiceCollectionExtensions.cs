@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Options;
 
-namespace Datadredge.SDK;
+namespace Webbstatistik.SDK;
 
 public static class ServerPageviewTrackingServiceCollectionExtensions
 {
@@ -17,9 +17,9 @@ public static class ServerPageviewTrackingServiceCollectionExtensions
         services.AddHttpClient(ServerPageviewTrackingTransport.HttpClientName, (serviceProvider, client) =>
         {
             var options = serviceProvider.GetRequiredService<IOptions<ServerPageviewTrackingOptions>>().Value;
-            if (!string.IsNullOrWhiteSpace(options.DatadredgeBaseUrl))
+            if (!string.IsNullOrWhiteSpace(options.WebbstatistikBaseUrl))
             {
-                client.BaseAddress = new Uri(options.DatadredgeBaseUrl, UriKind.Absolute);
+                client.BaseAddress = new Uri(options.WebbstatistikBaseUrl, UriKind.Absolute);
             }
         });
 

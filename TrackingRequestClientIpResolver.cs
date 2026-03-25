@@ -1,7 +1,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Http;
 
-namespace Datadredge.SDK;
+namespace Webbstatistik.SDK;
 
 public static class TrackingRequestClientIpResolver
 {
